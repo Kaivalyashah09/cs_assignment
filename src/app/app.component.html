@@ -12,7 +12,7 @@
       <input type="checkbox"   (change)="checkAllCheckBox($event)">
      
      
-     <span><b>Selected : </b> </span> {{count}} </div>
+     <span><b> &nbsp; Selected : </b> </span> {{count}} </div>
     
     <div class="col col-2"> 
 
@@ -36,11 +36,13 @@
 
 <tbody>
   <tr *ngFor="let data of Files" [style.background]="data.isSelected && data.status == 'available' ? '#d5f4e6' : data.isSelected && data.status == 'scheduled' ? '#f7cac9' : ''">
+    
     <td>
 
       <input type="checkbox" class="custom-control-input" value={{data.status}} [(ngModel)]="data.isSelected" (ngModelChange)="changed()">
      
   </td>
+
     <td>{{data.name}}</td>
     <td>{{data.device}}</td>
     <td>{{data.path}}</td>
@@ -48,16 +50,17 @@
  <td [ngStyle]="{'color': data.status == 'available' ? 'green':'red'}">  
   
       <ng-template [ngIf]="data.status == 'available'">
-    
         <span class="dot green-bg"></span>
       </ng-template>
 
       <ng-template [ngIf]="data.status == 'scheduled'">
-    
         <span class="dot red-bg"></span>
       </ng-template>
       
-      {{data.status}}  </td>
+      {{data.status}}  
+    
+    </td>
+
   </tr>
 
 </tbody>

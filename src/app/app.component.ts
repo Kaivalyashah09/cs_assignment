@@ -55,10 +55,11 @@ export class AppComponent {
 
     this.Files.forEach(item => {
       if (item['isSelected']) {
+        
         this.count = this.count + 1;
-    
-      
+
       }
+
       else
       {
         this.count = "None selected";
@@ -75,7 +76,7 @@ export class AppComponent {
   {
     
     let path = '';
-  
+
     this.Files.forEach(item => {
       if (item['isSelected'] && item['status'] == 'available'){
     
